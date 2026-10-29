@@ -23,8 +23,11 @@ spec:
         #
         # Referencia: https://docs.dapr.io/reference/arguments-annotations-overview/
         # ---------------------------------------------------------------------------
-        # TODO: Agregar las anotaciones aquí
-        
+        dapr.io/enabled:  "true"
+        dapr.io/app-id:   "order-subscriber"
+        # El subscriber sí necesita app-port: el sidecar le entrega los mensajes
+        # en POST /orders y consulta GET /dapr/subscribe en este puerto.
+        dapr.io/app-port: "5001"
     spec:
       containers:
         - name: order-subscriber

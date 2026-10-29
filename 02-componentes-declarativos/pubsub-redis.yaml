@@ -11,7 +11,7 @@ spec:
     # Formato: <nombre-del-service>.<namespace>.svc.cluster.local:<puerto>
     # Pista: ejecuta `kubectl get svc -n redis` para ver el nombre del Service.
     - name: redisHost
-      value: "" # <-- COMPLETAR
+      value: "redis-master.redis.svc.cluster.local:6379"
 
     - name: redisPassword
       value: ""

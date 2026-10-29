@@ -21,8 +21,8 @@ spec:
     #
     # Referencia: https://docs.dapr.io/developing-applications/building-blocks/pubsub/pubsub-message-ttl/
     # ---------------------------------------------------------------------------
-    # - name: ???
-    #   value: ???
+    - name: ttlInSeconds
+      value: "120"
 
     # ---------------------------------------------------------------------------
     # TODO 2: Configurar Consumer Group con Namespace para Multi-Tenancy
@@ -33,5 +33,6 @@ spec:
     #
     # Referencia: https://docs.dapr.io/operations/components/component-scopes/#namespaced-components
     # ---------------------------------------------------------------------------
-    # - name: ???
-    #   value: ???
+    # Dapr reemplaza {appID} y {namespace} en runtime, p. ej. order-subscriber-checkout
+    - name: consumerID
+      value: "{appID}-{namespace}"
